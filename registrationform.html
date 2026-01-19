@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Exp - 2 Form</title>
+</head>
+<body>
+  <h1>Exp - 2 &lt;form&gt;</h1>
+
+  <form id="expForm" action="#" method="post">
+    <p>
+      <label for="name">Name:</label><br />
+      <input type="text" id="name" name="name" placeholder="Enter your name" />
+    </p>
+
+    <p>
+      <label for="roll">Roll No:</label><br />
+      <input type="text" id="roll" name="roll" placeholder="Enter roll number" />
+    </p>
+      <legend>Branch</legend>
+      <p>
+        <input type="radio" id="cse" name="branch" value="CSE" checked />
+        <label for="cse">CSE</label><br />
+
+        <input type="radio" id="it" name="branch" value="IT" />
+        <label for="it">IT</label><br />
+
+        <input type="radio" id="cseds" name="branch" value="CSE-DS" />
+        <label for="cseds">CSE-DS</label><br />
+
+        <input type="radio" id="aiml" name="branch" value="AIML" />
+        <label for="aiml">AIML</label><br />
+
+        <input type="radio" id="en" name="branch" value="EN" />
+        <label for="en">EN</label><br />
+
+        <input type="radio" id="ece" name="branch" value="ECE" />
+        <label for="ece">ECE</label><br />
+
+        <input type="radio" id="me" name="branch" value="ME" />
+        <label for="me">ME</label><br />
+
+        <input type="radio" id="elce" name="branch" value="ELCE" />
+        <label for="elce">ELCE</label>
+      </p>
+    <p>
+      <label for="dob">Date of Birth:</label><br />
+      <input type="date" id="dob" name="dob" />
+    </p>
+
+    <p>
+      <button type="submit">Submit</button>
+      <button type="reset">Reset</button>
+    </p>
+  </form>
+
+  <script>
+    // simple submit handler just to show collected values
+    document.getElementById('expForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      const form = e.target;
+      const data = new FormData(form);
+      const obj = Object.fromEntries(data.entries());
+      alert('Form submitted:\\n' + JSON.stringify(obj, null, 2));
+    });
+  </script>
+</body>
+</html>
